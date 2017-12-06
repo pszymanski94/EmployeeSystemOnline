@@ -1,0 +1,10 @@
+#db properties
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/employeeapp?useSSL=false
+jdbc.username=root
+jdbc.password=root
+
+#hibernate configuration
+hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+hibernate.show_sql=true
+entitymanager.packages.to.scan=com.employees

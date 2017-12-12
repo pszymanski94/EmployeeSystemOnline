@@ -13,6 +13,4 @@ public interface EmployeeService {
     void save(Employee object);
 
     void delete(Long id);
-
-
 }

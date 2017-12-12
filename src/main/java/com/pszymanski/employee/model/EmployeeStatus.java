@@ -5,4 +5,4 @@ public enum EmployeeStatus {
     ZWOLNIONY,
     URLOP_ZDROWOTNY,
     DELEGACJA
-}
+    }

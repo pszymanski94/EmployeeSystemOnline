@@ -2,9 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="/WEB-INF/views/_include.jsp" %>
 
-<c:url value="/employee/edit" var="editEmployeeURL"/>
-<c:url value="/employee/delete" var="deleteEmployeeURL"/>
-
+<c:url value="/admin/employee/edit" var="editEmployeeURL"/>
+<c:url value="/admin/employee/delete" var="deleteEmployeeURL"/>
+<c:url value="/admin/employee-add" var="addEmployees"/>
 <html>
 <head>
     <title>Pracownicy</title>
@@ -14,6 +14,8 @@
 
     <h1>Pracownicy:</h1>
     <br>
+    <a href="${addEmployees}" class="btn btn-success" style="margin-bottom: 25px;">Dodaj nowego pracownika</a>
+
     <div class="row">
         <div class="col-md-12">
             <table class="table table-hover table-bordered">
@@ -62,7 +64,7 @@
                             </form>
                         </td>
                         <td>
-                            <form action="${deleteEmployeeURL}/${employee.id}" method="post">
+                            <form action="${deleteEmployeeURL}/${employee.id}" method="get">
                                 <button class="btn btn-danger delete-btn btn-xs">Usuń</button>
                             </form>
                         </td>

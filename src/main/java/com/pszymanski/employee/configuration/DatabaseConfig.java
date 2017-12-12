@@ -18,7 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "com.employees.repository")
+@EnableJpaRepositories(basePackages = "com.pszymanski.employee.repository")
 @PropertySource(value = "classpath:dbconfig")
 public class DatabaseConfig {
 

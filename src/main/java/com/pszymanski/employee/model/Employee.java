@@ -1,26 +1,30 @@
 package com.pszymanski.employee.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "employee")
 public class Employee extends BaseEntity {
-    @Column(name = "name", nullable = false, length = 25)
+    @Column(name = "name", nullable = false, length = 35)
     private String name;
 
     @Column(name = "subname", nullable = false, length = 45)
     private String subname;
 
-    @Column(name = "date_of_birth", nullable = false, length = 20)
-    private String date_of_birth;
+    @Column(name = "date_of_birth")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date_of_birth;
 
-    @Column(name = "street", nullable = false, length = 45)
+    @Column(name = "street", nullable = false, length = 55)
     private String street;
 
-    @Column(name = "city", nullable = false, length = 30)
+    @Column(name = "city", nullable = false, length = 45)
     private String city;
 
-    @Column(name = "status", nullable = false, length = 20)
+    @Column(name = "status", nullable = false, length = 30)
     private String status;
 
 
@@ -40,11 +44,11 @@ public class Employee extends BaseEntity {
         this.subname = subname;
     }
 
-    public String getDate_of_birth() {
+    public LocalDate getDate_of_birth() {
         return date_of_birth;
     }
 
-    public void setDate_of_birth(String date_of_birth) {
+    public void setDate_of_birth(LocalDate date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 

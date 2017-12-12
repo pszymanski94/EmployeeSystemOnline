@@ -4,12 +4,21 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ include file="/WEB-INF/views/_include.jsp" %>
 
-<c:url value="/employee-add/save" var="employeeAddURL"/>
-<c:url value="/employee-add/cancel" var="cancelAddURL"/>
+<c:url value="/admin/employee-add/save" var="employeeAddURL"/>
+<c:url value="/admin/employee-add/cancel" var="cancelAddURL"/>
 
 <html>
 <head>
     <title>Dodaj/edytuj pracownika</title>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker({
+                format:"yyyy-MM-dd",
+                orientation: "bottom auto",
+                startDate: new Date()
+            });
+        } );
+    </script>
 </head>
 <body>
 <div class="py-5">
@@ -41,7 +50,7 @@
                 </div>
 
                 <div class="form-group"><label>Data urodzenia:</label>
-                    <form:input path="date_of_birth" type="date" id="date_of_birth" class="form-control"/>
+                    <form:input path="date_of_birth" type="date" id="datepicker" class="form-control"/>
                     <form:errors path="date_of_birth" cssStyle="color: red"/>
                 </div>
 
@@ -51,7 +60,7 @@
                     <form:errors path="street" cssStyle="color: red"/>
                 </div>
 
-                <div class="form-group"><label>City:</label>
+                <div class="form-group"><label>Miasto:</label>
                     <form:input path="city" type="text" id="city" class="form-control"
                                 placeholder="Podaj miasto"/>
                     <form:errors path="city" cssStyle="color: red"/>

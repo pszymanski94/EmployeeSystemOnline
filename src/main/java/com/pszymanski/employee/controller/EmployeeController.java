@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 @Controller
 public class EmployeeController {
 
     @Autowired
     private EmployeeServiceImpl employeeService;
 
-    @RequestMapping(value = "/employees", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/employees", method = RequestMethod.GET)
     public String getEmployeesPage(Model model) {
 
         model.addAttribute("employeeList", employeeService.findAll());
@@ -27,7 +28,7 @@ public class EmployeeController {
     }
 
 
-    @RequestMapping(value = "/employee-add", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/employee-add", method = RequestMethod.GET)
     public String addEmployee(Model model) {
 
         model.addAttribute("employee", new Employee());
@@ -36,7 +37,7 @@ public class EmployeeController {
         return "employee-add";
     }
 
-    @RequestMapping(value = "/employee-add/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/employee-add/save", method = RequestMethod.POST)
     public String saveEmployee(@ModelAttribute Employee employee, BindingResult result) {
 
         if (result.hasErrors()) {
@@ -45,16 +46,16 @@ public class EmployeeController {
 
         employeeService.save(employee);
 
-        return "redirect:/employees";
+        return "redirect:/admin/employees";
     }
 
-    @RequestMapping(value = "/employee-add/cancel", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/employee-add/cancel", method = RequestMethod.GET)
     public String cancel() {
 
-        return "redirect:/employees";
+        return "redirect:/admin/employees";
     }
 
-    @RequestMapping(value = "/employee/edit/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/employee/edit/{id}", method = RequestMethod.GET)
     public String editEmployee(@PathVariable Long id, Model model) {
 
         model.addAttribute("employee", employeeService.findOne(id));
@@ -62,11 +63,10 @@ public class EmployeeController {
         return "employee-add";
     }
 
-    @RequestMapping(value = "/employee/delete/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/employee/delete/{id}", method = RequestMethod.GET)
     public String deleteEmployee(@PathVariable Long id) {
 
         employeeService.delete(id);
-        return "redirect:/employees";
+        return "redirect:/admin/employees";
     }
-
 }

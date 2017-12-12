@@ -7,4 +7,4 @@ jdbc.password=root
 #hibernate configuration
 hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
 hibernate.show_sql=true
-entitymanager.packages.to.scan=com.employees
+entitymanager.packages.to.scan=com.pszymanski.employee

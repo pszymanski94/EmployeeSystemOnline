@@ -4,3 +4,4 @@ Web application that allows to manage employees and tasks. Allows users to log i
 * JVM: Java 8, Spring 4 (Core, MVC, Data JPA, Security), Hibernate 5.
 * Web: JSP, HTML, CSS (Bootstrap), Tomcat.
 * Database: MySQL.
+* Tools: Maven.

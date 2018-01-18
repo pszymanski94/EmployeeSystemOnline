@@ -4,5 +4,6 @@ public enum EmployeeStatus {
     PRACUJE,
     ZWOLNIONY,
     URLOP_ZDROWOTNY,
-    DELEGACJA
+    DELEGACJA,
+    URLOP_MACIERZYNSKI
     }
